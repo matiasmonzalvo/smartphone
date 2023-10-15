@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monzalvo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <section>
+    <div class="outside-border">
+        <div class="silencer"></div>
+        <div class="volume-up"></div>
+        <div class="volume-down"></div>
+        <div class="button-on"></div>
+        <div class="inside-border">
+            <div class="light-behind-phone"></div>
+
+            <div class="camera">
+                <div class="camera-dot">
+                    <div class="camera-dot-2"></div>
+                    <div class="camera-dot-3"></div>
+                </div>
+                <div class="camera-speaker"></div>
+            </div>
+
+            <div class="screen">
+
+            <div class="lock">
+                <div class="lock-locked"></div>
+            </div>
+
+
+            <div class="time" id="currentTime"></div>
+
+
+            <div class="t-r-info">
+                <div class="dots">...</div>
+                <div class="battery">
+                    <div class="bar"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+
+            <div class="date" id="currentDate"></div>
+
+
+            <div class="torch-outter">
+                <div class="light"></div>
+                <div class="top"></div>
+                <div class="switch-top"></div>
+                <div class="switch-section"></div>
+                <div class="switch">
+                    <div class="dot"></div>
+                </div>
+            </div>
+          
+            
+            <div class="bottom-line"></div>
+            
+
+            <div class="camera-outter">
+                <div class="box"></div>
+                <div class="eye"></div>
+                <div class="circle"></div>
+                <div class="dot"></div>
+            </div>
+            </div>    
+            <div class="imageContainer">
+              <div class="imageContainerInner">
+                  <video id="videoElement" src="img/phonevideo.mp4" autoplay loop muted data-iswebcam="false" preload="metadata" type="video/mp4"></video>  
+                  <div class="flash"></div>
+              </div>
+              <div class="controls">
+                  <button data-zoom="1" class="active">.5<span>&times;</span></button>
+                  <button data-zoom="1.5">1<span>&times;</span></button>
+                  <button data-zoom="2.5">3<span>&times;</span></button>
+              </div>
+          
+              <div class="otherControls">
+                  <button class="thumbnail">
+                      <img src="https://images.pexels.com/videos/8688878/pexels-photo-8688878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                  </button>
+                  <button class="camerabutton"></button>
+                  <button class="switchCamera">
+                      <span class="material-symbols-outlined">
+                          flip_camera_android
+                      </span>
+                  </button>
+              </div>
+                    <div class="bottom-line" id="bottomLineCam2"></div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

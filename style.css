@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --m_color: #0b2035;
+  --s_color: #fc7904;
+  --myborder: 0px;
+  --box_shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  --font: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #313131;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 16px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+}
+
+
+.outside-border {
+  background-image: url("img/iphone.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 52%;
+  position: relative;
+  width: 212px;
+  height: 438px;
+  border: 0.6px solid white;
+  margin-left: -9px;
+  margin-top: 37px;
+  border-radius: 35px;
+  transition: 0.5s all;
+}
+
+.silencer {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  width: 2px;
+  height: 13px;
+  left: -2px;
+  top: 81.5px;
+  opacity: 0.8;
+}
+
+.volume-up {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    height: 28px;
+    width: 1px;
+    left: -2.5px;
+    opacity: 0.8;
+    top: 110px;
+}
+
+.volume-down {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  height: 28px;
+  width: 1px;
+  left: -2.5px;
+  opacity: 0.8;
+  top: 148px;
+}
+
+
+.button-on {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  height: 45px;
+  width: 2px;
+  right: -2px;
+  opacity: 0.8;
+  top: 121px;
+  cursor: pointer;
+}
+
+.inside-border {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 6px solid black;
+  border-radius: 35px;
+  overflow: hidden;
+}
+
+.inside-border.overflow{
+  overflow: visible;
+}
+
+
+.screen{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.screen.off{
+  opacity: 0;
+  transition: 0.5 all;
+  pointer-events: none;
+}
+
+.outside-border.off{
+  background-image: url("https://w0.peakpx.com/wallpaper/241/855/HD-wallpaper-dark-black-plain-whole.jpg");
+  transition: 0.3s all;
+}
+
+.screen.screentoleft{
+  transform: translateX(-220px);
+  transition: 0.3s all;
+}
+
+.screen.screentoright{
+  transform: translateX(0);
+  transition: 0.3s all;
+}
+
+
+.camera {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 76px;
+  height: 20px;
+  background-color: black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  top: -2px;
+  z-index: 100;
+}
+
+.camera-dot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  left: 12px;
+  top: 5px;
+}
+
+.camera-dot-2 {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  opacity: 0.3;
+  box-shadow: var(--box_shadow);
+  filter: blur(1px);
+}
+
+.camera-dot-3 {
+  position: absolute;
+  background-color: #000;
+  border-radius: 50%;
+  width: 1px;
+  height: 1px;
+  opacity: 0.7;
+}
+
+.camera-speaker {
+  position: absolute;
+  background-color: #fff;
+  width: 28px;
+  height: 1px;
+  border-radius: 20px;
+  top: -1px;
+  opacity: 0.2;
+}
+
+.lock {
+  position: absolute;
+  width: 12px;
+  height: 10px;
+  top: 34px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.lock-locked {
+  position: absolute;
+  width: 9px;
+  height: 15px;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  top: -7px;
+  left: 1.7px;
+}
+
+.time {
+  position: absolute;
+  top: 46px;
+  font-size: 42px;
+  font-weight: 100;
+}
+
+.date {
+  position: absolute;
+  top: 92px;
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.t-r-info {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  right: 17px;
+  top: 8px;
+  font-size: 10px;
+}
+
+.battery {
+  position: relative;
+  margin-top: 4px;
+  height: 7px;
+  width: 14px;
+  border: 0.7px solid rgba(255, 255, 255, 0.709);
+  border-radius: 2px;
+  .bar {
+    width: calc(80% - 2px);
+    height: calc(100% - 2px);
+    background-color: #fff;
+    margin: 1px;
+    border-radius: 1px;
+  }
+  .dot {
+    position: absolute;
+    right: -2px;
+    top: 1.5px;
+    width: 1px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.709);
+    border-radius: 2px;
+  }
+}
+
+.torch-outter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  background-color: rgba(255, 255, 255, 0.202);
+  left: 29px;
+  bottom: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 250ms;
+  &:hover {
+    transform: scale(1.3);
+  }
+  .light {
+    width: 6px;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+  .top {
+    margin-top: 1px;
+    width: 6px;
+    height: 4px;
+    background-color: #fff;
+    border-top-left-radius: 0.5px;
+    border-top-right-radius: 0.5px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  .switch-section {
+    margin-top: -1px;
+    width: 3px;
+    height: 9px;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+  .switch {
+    position: absolute;
+    top: 10px;
+    left: 10.5px;
+    border-radius: 50%;
+    width: 2px;
+    height: 4px;
+    background-color: #000;
+    .dot {
+      position: absolute;
+      bottom: 0.4px;
+      left: 0.4px;
+      width: 1.2px;
+      height: 1.2px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+}
+
+.camera-outter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  background-color: rgba(255, 255, 255, 0.202);
+  right: 29px;
+  bottom: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 250ms;
+  &:hover {
+    transform: scale(1.3);
+  }
+  .box {
+    width: 12px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+  .eye {
+    position: absolute;
+    background-color: #fff;
+    width: 5px;
+    height: 2px;
+    top: 6px;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+  }
+  .circle {
+    position: absolute;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    border: 1px solid #000;
+    border-radius: 50%;
+  }
+  .dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 7px;
+    right: 5.2px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: scale(0.2);
+  }
+}
+
+.bottom-line {
+  position: absolute;
+  height: 2px;
+  width: 80px;
+  background-color: #fff;
+  bottom: 6px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.light-behind-phone {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 100%;
+  opacity: 0;
+  z-index: -1;
+  margin: 10px -110px 0 0;
+  box-shadow:
+    0 100px 20px rgba(255, 255, 255, 0.9),
+    0 0 90px 30px rgba(255, 255, 255, 0.8),
+    0 0 80px 40px rgba(255, 255, 255, 0.7),
+    0 0 70px 50px rgba(255, 255, 255, 0.6),
+    0 0 60px 60px rgba(255, 255, 255, 0.5),
+    0 0 50px 70px rgba(255, 255, 255, 0.4),
+    0 0 40px 80px rgba(255, 255, 255, 0.3),
+    0 0 30px 90px rgba(255, 255, 255, 0.2),
+    0 0 20px 100px rgba(255, 255, 255, 0.1);
+}
+
+.light-behind-phone.luz{
+  opacity: 1;
+  z-index: -1;
+}
+
+.torch-outter.active{
+  background-color: #fff;
+  &:hover {
+    transform: scale(1.3);
+  }
+  .light {
+    width: 6px;
+    height: 1px;
+    background-color: #000000;
+    border-radius: 3px;
+  }
+  .top {
+    margin-top: 1px;
+    width: 6px;
+    height: 4px;
+    background-color: #000000;
+    border-top-left-radius: 0.5px;
+    border-top-right-radius: 0.5px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  .switch-section {
+    margin-top: -1px;
+    width: 3px;
+    height: 9px;
+    background-color: #000000;
+    border-radius: 1px;
+  }
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+  object-position: center;
+}
+
+.imageContainer {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  overflow: hidden;
+  background: #020202;
+  transform: scale(1.007);
+  transform: translateX(220px);
+}
+
+.imageContainer.display{
+  display: none;
+}
+
+.imageContainer.opencam{
+  display: flex;
+  transform: translate(0);
+  transition: 0.3s all;
+}
+
+.imageContainer.closecam{
+  transform: translate(220px);
+  transition: 0.3s all;
+}
+
+.imageContainer.off{
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.imageContainerInner {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  margin-top: -30px;
+  position: absolute;
+}
+
+.imageContainer img {
+  display: flex;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 0.4s;
+}
+
+.controls {
+  position: absolute;
+  bottom: 105px;
+  background: rgba(0, 0, 0, 0.349);
+  border-radius: 50px;
+  display: flex;
+  gap: 7px;
+  padding: 4px 7px;
+  z-index: 20;
+}
+
+.controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.56);
+  color: #fff;
+  font-size: 8px;
+  font-weight: 600;
+  font-family: system-ui, arial, sans-serif;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.controls button span {
+  display: none;
+}
+
+.controls button.active {
+  transform: scale(1.2);
+  color: yellow;
+  transition: transform 0.2s;
+}
+
+.controls button.active span {
+  font-size: 12px;
+  display: flex;
+}
+
+.otherControls {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  align-items: center;
+  z-index: 20;
+}
+
+.camerabutton {
+  height: 29px;
+  width: 29px;
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 90%), 0px 0px 0px 3px #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.thumbnail {
+  height: 29px;
+  width: 29px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 0;
+}
+
+.switchCamera {
+  height: 27px;
+  width: 27px;
+  background: rgb(95 89 89 / 40%);
+  border: 0;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.switchCamera span {
+  color: #ffff;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.thumbnail img {
+  object-fit: cover;
+  width: 25px;
+  margin-left: -4px;
+}
+
+  
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: perspective(400px) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flipOutY {
+  from {
+    transform: perspective(400px) rotateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+.flipping-out {
+  animation: flipOutY 0.5s forwards;
+}
+
+.flipping-in {
+  animation: flipInY 0.5s forwards;
+}
+
+.flash {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+}
+
+.shutterClick {
+  animation: cameraFlash 0.3s 0.3s alternate-reverse 1;
+}
+
+@keyframes cameraFlash {
+  from {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow: inset 0 0 0 100px #fff;
+  }
+}
+
+#bottomLineCam2 {
+  cursor: pointer;
+}
